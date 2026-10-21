@@ -1,0 +1,236 @@
+{
+  "airport_name": "Singapore Changi Airport",
+  "city": "Singapore",
+  "time_budget": {
+    "deplane_and_immigration_min": 35,
+    "transit_to_city_min": 45,
+    "transit_mode": "MRT East-West Line from Changi Airport station, changing at Tanah Merah, to City Hall or Raffles Place",
+    "transit_cost_estimate": "About SGD 2 each way, paid by tapping a contactless bank card or phone at the gate",
+    "transit_back_min": 50,
+    "reentry_security_min": 30,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-20T08:35",
+    "arrive_city_at": "2026-11-20T09:20",
+    "at_gate_by": "2026-11-20T17:45",
+    "deadline_math": "17:45 at gate - 30 security - 50 transit back - 30 safety margin = 15:55",
+    "leave_city_by": "2026-11-20T15:55",
+    "usable_city_min": 395,
+    "assumptions": [
+      "Changi immigration is efficient at 08:00, and UK passport holders can usually use the automated lanes",
+      "Bags are checked through and there is no terminal change, so there is no baggage claim or bag drop",
+      "Security at Changi is done at the gate, so outbound immigration is quick; the return trip assumes leaving the city before the 17:00 MRT evening peak",
+      "The MRT runs every 5-10 minutes, and the transit times include the walk from the terminal to the station and the change at Tanah Merah"
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "UK passport holders can enter Singapore visa-free for short visits, but you must submit the free SG Arrival Card online within 3 days before you arrive. Rules can change, so confirm on the official ICA Singapore website before you fly, and keep your onward boarding pass handy."
+  },
+  "verdict": "GO",
+  "verdict_reason": "You have about 6.5 hours in Singapore after every buffer, with an easy MRT link and no bags to worry about. Before you fly, submit the free SG Arrival Card online within 3 days of arrival. Your SGD 50 cap easily covers this hawker-and-hiking day.",
+  "itinerary": [
+    {
+      "start": "2026-11-20T08:35",
+      "end": "2026-11-20T09:20",
+      "type": "transit",
+      "title": "MRT into the city",
+      "location": "Changi Airport MRT to Tiong Bahru (East-West Line)",
+      "description": "Tap your contactless card at the gate, change at Tanah Merah across the platform, and ride the green line west to Tiong Bahru.",
+      "cost_estimate": "SGD 2",
+      "tip": "Tiong Bahru is 3 stops past Raffles Place, so allow up to 5 extra minutes."
+    },
+    {
+      "start": "2026-11-20T09:25",
+      "end": "2026-11-20T10:15",
+      "type": "food",
+      "title": "Hawker breakfast at Tiong Bahru Market",
+      "location": "Tiong Bahru Market, 30 Seng Poh Road",
+      "description": "Head upstairs to the food centre for chwee kueh from Jian Bo Shui Kueh and a kopi, then try lor mee or pau if you are still hungry.",
+      "cost_estimate": "SGD 5-8",
+      "tip": "Hawker stalls close on rotating days, so pick whatever has a queue. Stroll past the 1930s art deco flats on the way out."
+    },
+    {
+      "start": "2026-11-20T10:15",
+      "end": "2026-11-20T10:40",
+      "type": "transit",
+      "title": "MRT to HarbourFront",
+      "location": "Tiong Bahru to Outram Park (EW), then North East Line to HarbourFront",
+      "description": "One stop east, then two stops on the purple line to the start of the Southern Ridges.",
+      "cost_estimate": "SGD 1.50",
+      "tip": "Exit toward Marang Road for the trailhead."
+    },
+    {
+      "start": "2026-11-20T10:40",
+      "end": "2026-11-20T13:00",
+      "type": "activity",
+      "title": "Southern Ridges walk",
+      "location": "Marang Trail, Mount Faber, Henderson Waves, Forest Walk, Alexandra Arch",
+      "description": "Climb the shaded Marang Trail up Mount Faber, cross the wave-shaped Henderson Waves bridge, then follow the elevated Forest Walk through the treetops to Alexandra Arch. It is a green side of Singapore most visitors miss.",
+      "cost_estimate": "Free",
+      "tip": "Carry at least 1 litre of water. Long-tailed macaques live here, so keep food in your bag."
+    },
+    {
+      "start": "2026-11-20T13:00",
+      "end": "2026-11-20T13:20",
+      "type": "transit",
+      "title": "Walk to ABC Brickworks",
+      "location": "Alexandra Arch to ABC Brickworks Market & Food Centre, 6 Jalan Bukit Merah",
+      "description": "About 1.5 km along Alexandra Road. You can also hop on any bus heading toward Jalan Bukit Merah.",
+      "cost_estimate": "Free-SGD 1.20",
+      "tip": "Use Google Maps transit mode for the bus and tap the same contactless card."
+    },
+    {
+      "start": "2026-11-20T13:20",
+      "end": "2026-11-20T14:10",
+      "type": "food",
+      "title": "Neighbourhood hawker lunch",
+      "location": "ABC Brickworks Market & Food Centre",
+      "description": "A true heartland food centre: try char kway teow or duck rice, then cool down with chendol or ice kachang from the dessert stalls.",
+      "cost_estimate": "SGD 8-12",
+      "tip": "Cash is still king at many stalls, so carry about SGD 20 in notes and coins."
+    },
+    {
+      "start": "2026-11-20T14:10",
+      "end": "2026-11-20T14:40",
+      "type": "transit",
+      "title": "Walk and MRT to Fort Canning",
+      "location": "Redhill MRT (EW) to City Hall, then walk to Fort Canning Park",
+      "description": "About a 10-minute walk to Redhill, five stops east to City Hall, then a short walk up to the park.",
+      "cost_estimate": "SGD 1.50",
+      "tip": "You are now on the same line that takes you back to the airport."
+    },
+    {
+      "start": "2026-11-20T14:40",
+      "end": "2026-11-20T15:35",
+      "type": "sight",
+      "title": "Fort Canning Park gardens",
+      "location": "Fort Canning Park",
+      "description": "A shady hilltop park with the restored Spice Garden, Sang Nila Utama Garden, and the photogenic Tree Tunnel near the Dhoby Ghaut side.",
+      "cost_estimate": "Free",
+      "tip": "November brings afternoon thunderstorms. If it pours, shelter under the Fort Gate or head to City Hall early."
+    },
+    {
+      "start": "2026-11-20T15:35",
+      "end": "2026-11-20T15:50",
+      "type": "transit",
+      "title": "Walk to City Hall MRT",
+      "location": "Fort Canning Park to City Hall MRT",
+      "description": "A gentle downhill walk via Coleman Street to the station.",
+      "cost_estimate": "Free",
+      "tip": "Grab a bottle of water at a 7-Eleven on the way."
+    },
+    {
+      "start": "2026-11-20T15:55",
+      "end": "2026-11-20T16:45",
+      "type": "transit",
+      "title": "MRT back to Changi",
+      "location": "City Hall to Changi Airport (East-West Line, change at Tanah Merah)",
+      "description": "Ride back east, change at Tanah Merah for the airport branch, then walk to departures and clear the automated immigration gates.",
+      "cost_estimate": "SGD 2",
+      "tip": "This is your hard deadline. Be through the City Hall fare gates by 15:55, ahead of the evening peak."
+    }
+  ],
+  "estimated_total_spend": "About SGD 22-30 per person",
+  "running_late_plan": [
+    "If you are not at Alexandra Arch by 13:15, skip ABC Brickworks and eat at the hawker centre next to Redhill MRT.",
+    "If lunch runs past 14:20, skip Fort Canning and ride straight to City Hall, or head back to the airport early.",
+    "If the MRT is disrupted, take a Grab or taxi from City Hall to Changi (about 25 min, SGD 25-35). Keep that fare in reserve.",
+    "Be on the train from City Hall no later than 15:55, no matter what."
+  ],
+  "practical_tips": [
+    "Submit the SG Arrival Card online within 3 days before you land. UK passports can usually use the automated immigration lanes.",
+    "Tap a contactless Visa or Mastercard, or your phone, at MRT gates and on buses. Use the same card all day so fares are capped correctly.",
+    "Hawker stalls often take only cash or local QR payments. Carry about SGD 20-30 in small notes and coins.",
+    "Changi has free Wi-Fi, and so do many malls. An eSIM is only needed if you want maps on the trail.",
+    "November is wet season, so pack a compact umbrella. It also helps on the exposed bridges in the midday sun.",
+    "Security happens at the gate at Changi, so arrive at your gate on time, not just at the terminal."
+  ],
+  "airport_fallback": [
+    "Visit the Jewel Rain Vortex and Shiseido Forest Valley trails (landside, free), or the airside Butterfly Garden and Sunflower Garden in Terminals 2 and 3.",
+    "Book a day-use room or shower at the airside Ambassador Transit Hotel or Aerotel to rest before your 18:30 flight.",
+    "Eat affordable local dishes at the staff-style food courts, such as Kopitiam in Terminal 1 or the Terminal 3 basement."
+  ],
+  "math": {
+    "layover_min": 630,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-20T08:35",
+    "arrive_city_at": "2026-11-20T09:20",
+    "leave_city_by": "2026-11-20T15:55",
+    "at_gate_by": "2026-11-20T17:45",
+    "usable_city_min": 395,
+    "deadline_math": "17:45 at gate - 30 security - 50 transit back - 30 safety margin = 15:55",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 35
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 45
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 395
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 50
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 30
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "SIN",
+    "arrival_local": "2026-11-20T08:00",
+    "departure_local": "2026-11-20T18:30",
+    "layover_min": 630,
+    "passport": "United Kingdom",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "local food",
+      "nature and parks"
+    ],
+    "budget": "shoestring",
+    "pace": "balanced",
+    "mobility": "no limitations",
+    "visited_before": true,
+    "already_seen": "Gardens by the Bay, Marina Bay Sands, Chinatown",
+    "budget_amount": 50.0,
+    "budget_currency": "SGD",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 11.1,
+      "plan": 54.4
+    }
+  }
+}

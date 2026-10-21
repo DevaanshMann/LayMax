@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LayMax · Layover Planner</title>
+  <meta name="description" content="Turn a long layover into a safe, well-timed city visit. LayMax does the math first.">
+  <script>
+    // Apply the saved or system theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("laymax-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff6b3d'/><path d='M7 18l18-7-6 13-3-5z' fill='white'/></svg>">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 15.5v-2l-8-5V3a1.5 1.5 0 0 0-3 0v5.5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5l-2-1.5v-6z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  </svg>
+
+  <!-- ============ HERO ============ -->
+  <header class="sky" id="sky">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="sun" aria-hidden="true"></div>
+    <div class="cloud cloud-1" aria-hidden="true"></div>
+    <div class="cloud cloud-2" aria-hidden="true"></div>
+    <div class="cloud cloud-3" aria-hidden="true"></div>
+
+    <nav class="nav">
+      <a class="brand" href="/" aria-label="LayMax home">
+        <span class="brand-mark"><svg><use href="#i-plane"/></svg></span>
+        <span class="solari" id="solari" data-word="LAYMAX" data-accent-from="3" aria-hidden="true"></span>
+      </a>
+      <div class="nav-right">
+        {% if mock %}<span class="mock-badge" title="LAYMAX_MOCK=1: replaying saved plans, no API calls">Demo mode</span>{% endif %}
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero" id="hero">
+      <p class="hero-kicker">Layover planner</p>
+      <h1>Got <span class="rotator" id="rot-hours">9 hours</span> in <span class="rotator city" id="rot-city">Istanbul</span>?</h1>
+      <p class="hero-sub">LayMax subtracts immigration, transit and security first, gives you an honest <b>go</b> or <b>no go</b>, and then plans your time with a hard deadline to head back.</p>
+      <ul class="hero-points">
+        <li><svg><use href="#i-check"/></svg>Deadline checked by the server</li>
+        <li><svg><use href="#i-check"/></svg>Visa and entry rules for your passport</li>
+        <li><svg><use href="#i-check"/></svg>Plans built around your interests</li>
+      </ul>
+      <a href="#trip-form" class="btn accent hero-cta">Plan my layover</a>
+    </div>
+
+    <svg class="flight" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path id="flight-path" class="flight-path" d="M760 40 C 880 -10, 940 170, 1030 172 S 1200 10, 1300 50"/>
+      <circle class="flight-dot" cx="760" cy="40" r="6"/>
+      <circle class="flight-dot" cx="1300" cy="50" r="6"/>
+      <circle class="flight-pin" cx="1030" cy="172" r="7"/>
+      <text class="flight-label" x="760" y="20" text-anchor="middle">LAND</text>
+      <text class="flight-label" x="1300" y="28" text-anchor="middle">DEPART</text>
+      <text class="flight-label" x="1030" y="150" text-anchor="middle">YOUR CITY</text>
+      <g class="flight-plane">
+        <use href="#i-plane" x="-14" y="-14" width="28" height="28" transform="rotate(90)"/>
+        <animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#flight-path"/></animateMotion>
+      </g>
+    </svg>
+    <svg class="skyline" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path class="skyline-back" d="M0 200 L0 151 L38 151 L38 200 L42 156 L63 156 L63 200 L63 123 L104 123 L104 200 L104 147 L154 147 L154 200 L154 133 L177 133 L177 200 L181 145 L203 145 L203 200 L203 133 L256 133 L256 200 L256 153 L310 153 L310 200 L310 157 L365 157 L365 200 L369 146 L390 146 L390 200 L390 106 L443 106 L443 200 L443 134 L479 134 L479 200 L479 153 L531 153 L531 200 L533 108 L586 108 L586 200 L586 123 L610 123 L610 200 L610 154 L651 154 L651 200 L651 157 L705 157 L705 200 L705 117 L754 117 L754 200 L758 131 L796 131 L796 200 L800 141 L841 141 L841 200 L841 116 L870 116 L870 200 L870 124 L893 124 L893 200 L895 129 L946 129 L946 200 L948 142 L994 142 L994 200 L994 128 L1019 128 L1019 200 L1023 112 L1051 112 L1051 200 L1053 129 L1080 129 L1080 200 L1084 118 L1104 118 L1104 200 L1104 124 L1157 124 L1157 200 L1159 116 L1198 116 L1198 200 L1200 129 L1256 129 L1256 200 L1260 107 L1282 107 L1282 200 L1282 130 L1317 130 L1317 200 L1317 114 L1338 114 L1338 200 L1340 117 L1394 117 L1394 200 L1398 115 L1434 115 L1434 200 L1438 159 L1478 159 L1478 200 L1440 200 L1440 200 L0 200 Z"/>
+      <path class="skyline-front" d="M0 200 L0 174 L33 174 L33 200 L35 145 L91 145 L91 200 L91 114 L96.0 86 L101 114 L101 200 L101 152 L131 152 L131 200 L135 173 L178 173 L178 200 L178 149 L205 149 L205 200 L209 178 L227 178 L227 200 L227 152 A28 25 0 0 1 282 152 L282 200 L286 158 L342 158 L342 200 L346 146 L389 146 L389 200 L393 176 L419 176 L419 200 L419 166 L445 166 L445 200 L449 158 L486 158 L486 200 L488 145 L540 145 L540 200 L540 181 L579 181 L579 200 L581 172 L637 172 L637 200 L639 146 L691 146 L691 200 L691 146 L722 146 L722 200 L724 152 L760 152 L760 200 L764 178 L787 178 L787 200 L791 104 L796.0 76 L801 104 L801 200 L801 134 L821 134 L821 200 L821 161 L863 161 L863 200 L865 180 L915 180 L915 200 L921 86 L924 56 L927 86 L931 180 L931 200 L931 164 L961 164 L961 200 L963 161 L990 161 L990 200 L992 158 L1033 158 L1033 200 L1037 158 L1084 158 L1084 200 L1084 142 L1134 142 L1134 200 L1134 166 L1171 166 L1171 200 L1173 132 L1226 132 L1226 200 L1230 158 L1285 158 L1285 200 L1285 161 L1306 161 L1306 200 L1310 160 L1350 160 L1350 200 L1352 160 A24 22 0 0 1 1401 160 L1401 200 L1403 163 L1437 163 L1437 200 L1439 162 L1468 162 L1468 200 L1440 200 L1440 200 L0 200 Z"/>
+    </svg>
+  </header>
+
+  <main>
+    <!-- ============ INPUT SCREEN ============ -->
+    <section id="input-screen" class="screen" aria-label="Plan your layover">
+      {% if mock %}
+      <div class="demo-bar" aria-labelledby="demo-title">
+        <p id="demo-title"><b>Demo mode</b> · replay a saved real plan (no API credits used)</p>
+        <div class="demo-buttons" id="demo-buttons">
+          <button type="button" class="btn ghost small" data-sample="">Doha · GO</button>
+        </div>
+      </div>
+      {% endif %}
+
+      <form id="trip-form" class="card form" novalidate>
+        <fieldset>
+          <legend><span class="step">1</span>Your layover</legend>
+          <div class="grid g3">
+            <div class="field">
+              <label for="airport">Layover airport</label>
+              <input id="airport" name="airport" required placeholder="e.g. IST, Singapore Changi" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="arrival_local">You land <small>local time</small></label>
+              <input id="arrival_local" type="datetime-local" name="arrival_local" required>
+            </div>
+            <div class="field">
+              <label for="departure_local">Next flight departs <small>local time</small></label>
+              <input id="departure_local" type="datetime-local" name="departure_local" required>
+            </div>
+          </div>
+          <p id="layover-preview" class="preview" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="step">2</span>Getting out of the airport</legend>
+          <div class="grid g3">
+            <div class="field">
+              <label for="passport">Passport</label>
+              <div class="combo" id="passport-combo">
+                <span class="combo-flag" id="passport-flag" aria-hidden="true"></span>
+                <input id="passport" name="passport" placeholder="Search countries" autocomplete="off"
+                       role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="passport-list">
+                <button type="button" class="combo-toggle" tabindex="-1" aria-label="Show all countries"><svg><use href="#i-chevron"/></svg></button>
+                <ul class="combo-list" id="passport-list" role="listbox" aria-label="Countries" hidden></ul>
+              </div>
+            </div>
+            <div class="field">
+              <label for="visa_status">Visa for this country</label>
+              <div class="select">
+                <select id="visa_status" name="visa_status">
+                  <option value="unsure">Not sure, please check</option>
+                  <option value="not_needed">I don't need one</option>
+                  <option value="have_visa">I already have one</option>
+                  <option value="need_but_dont_have">I need one and don't have it</option>
+                </select>
+                <svg><use href="#i-chevron"/></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label for="mobility">Mobility or needs <small>optional</small></label>
+              <input id="mobility" name="mobility" placeholder="e.g. traveling with a toddler" autocomplete="off">
+            </div>
+          </div>
+          <div class="switches">
+            <label class="switch"><input type="checkbox" name="bags_checked_through" checked><span class="track"></span>Bags are checked through to my final destination</label>
+            <label class="switch"><input type="checkbox" name="terminal_change"><span class="track"></span>My next flight leaves from a different terminal</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="step">3</span>This city and you</legend>
+          <div class="choice-cards c2" role="radiogroup" aria-label="Have you been to this city before?">
+            <label class="choice"><input type="radio" name="visited" value="no" checked>
+              <span><b>First time here</b><small>Show me what the city is famous for</small></span></label>
+            <label class="choice"><input type="radio" name="visited" value="yes">
+              <span><b>I've been before</b><small>Skip the obvious, show me local favorites</small></span></label>
+          </div>
+          <div class="field reveal" id="seen-field" hidden>
+            <label for="already_seen">What have you already done there? <small>optional, we'll skip it</small></label>
+            <input id="already_seen" name="already_seen" placeholder="e.g. Hagia Sophia, Grand Bazaar, a Bosphorus cruise" autocomplete="off">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="step">4</span>Your style</legend>
+          <div class="field">
+            <span class="label" id="interests-label">Interests <small>pick any</small></span>
+            <div class="chips" role="group" aria-labelledby="interests-label">
+              <label class="chip"><input type="checkbox" name="interests" value="local food"><span>Local food</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="culture and history"><span>Culture &amp; history</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="architecture"><span>Architecture</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="art and museums"><span>Art &amp; museums</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="nature and parks"><span>Nature &amp; parks</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="markets and shopping"><span>Markets &amp; shopping</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="nightlife"><span>Nightlife</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="photography spots"><span>Photo spots</span></label>
+              <label class="chip"><input type="checkbox" name="interests" value="relaxation and spa"><span>Relax &amp; recharge</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label" id="budget-label">Budget <small>per person for the whole layover, flights not included</small></span>
+            <div class="choice-cards c3" role="radiogroup" aria-labelledby="budget-label">
+              <label class="choice"><input type="radio" name="budget" value="shoestring">
+                <span><b>Shoestring</b><em>Under $40</em><small>Street food, free sights, public transit</small></span></label>
+              <label class="choice"><input type="radio" name="budget" value="moderate" checked>
+                <span><b>Moderate</b><em>$40 to $120</em><small>Sit-down meals and a ticketed sight or two</small></span></label>
+              <label class="choice"><input type="radio" name="budget" value="splurge">
+                <span><b>Splurge</b><em>$120+</em><small>Taxis, great restaurants, premium experiences</small></span></label>
+            </div>
+            <div class="budget-custom">
+              <label for="budget_amount">Or set your max</label>
+              <div class="money">
+                <div class="select currency">
+                  <select name="budget_currency" aria-label="Currency">
+                    <option>USD</option><option>EUR</option><option>GBP</option><option>INR</option><option>CAD</option>
+                    <option>AUD</option><option>SGD</option><option>AED</option><option>JPY</option><option>CNY</option>
+                  </select>
+                  <svg><use href="#i-chevron"/></svg>
+                </div>
+                <input id="budget_amount" name="budget_amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Amount">
+              </div>
+              <small id="budget-hint" class="hint" aria-live="polite"></small>
+            </div>
+          </div>
+
+          <div class="grid g2">
+            <div class="field">
+              <span class="label" id="pace-label">Pace</span>
+              <div class="segmented" role="radiogroup" aria-labelledby="pace-label">
+                <label><input type="radio" name="pace" value="relaxed"><span>Relaxed</span></label>
+                <label><input type="radio" name="pace" value="balanced" checked><span>Balanced</span></label>
+                <label><input type="radio" name="pace" value="packed"><span>Packed</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <span class="label" id="risk-label">Extra safety margin</span>
+              <div class="segmented" role="radiogroup" aria-labelledby="risk-label">
+                <label><input type="radio" name="risk_tolerance" value="relaxed"><span>+15 min</span></label>
+                <label><input type="radio" name="risk_tolerance" value="balanced" checked><span>+30 min</span></label>
+                <label><input type="radio" name="risk_tolerance" value="cautious"><span>+45 min</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notes">Anything else? <small>optional</small></label>
+            <textarea id="notes" name="notes" rows="2" placeholder="e.g. vegetarian, I'd love a shower, it's my first time in Asia"></textarea>
+          </div>
+        </fieldset>
+
+        <p id="form-error" class="error" role="alert" hidden></p>
+
+        <div class="actions">
+          <button type="button" id="example-btn" class="btn ghost">Fill in an example</button>
+          <button type="submit" class="btn accent big">Do the math</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ LOADING ============ -->
+    <section id="loading-screen" class="screen" hidden aria-live="polite">
+      <div class="card loading">
+        <svg class="loading-flight" viewBox="0 0 400 110" aria-hidden="true">
+          <path id="loading-path" class="flight-path" d="M20 80 C 120 0, 280 0, 380 80"/>
+          <g class="flight-plane">
+            <use href="#i-plane" x="-12" y="-12" width="24" height="24" transform="rotate(90)"/>
+            <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto"><mpath href="#loading-path"/></animateMotion>
+          </g>
+        </svg>
+        <h2>Planning your layover</h2>
+        <ol id="loading-steps" class="steps">
+          <li>Estimating immigration and transit times</li>
+          <li>Checking entry rules for your passport</li>
+          <li>Building your itinerary</li>
+          <li>Double-checking every time against your deadline</li>
+        </ol>
+        <p class="muted"><span id="elapsed">0</span>s · usually 30 to 60 seconds</p>
+      </div>
+    </section>
+
+    <!-- ============ OUTPUT SCREEN ============ -->
+    <section id="output-screen" class="screen" hidden aria-labelledby="pass-city">
+      <div class="toolbar no-print">
+        <button type="button" class="btn ghost" id="back-btn">← Edit trip</button>
+        <div class="toolbar-right">
+          <button type="button" class="btn ghost" id="print-btn">Print</button>
+          <button type="button" class="btn ghost" id="json-btn">Download JSON</button>
+        </div>
+      </div>
+
+      <article class="pass" id="pass">
+        <div class="pass-main">
+          <div class="pass-head">
+            <span>LayMax · Layover pass</span>
+            <span id="pass-date"></span>
+          </div>
+          <div class="pass-route">
+            <div><small>Lands</small><b id="pass-from"></b></div>
+            <div class="pass-line" aria-hidden="true"><svg><use href="#i-plane"/></svg></div>
+            <div class="right"><small>Departs</small><b id="pass-to"></b></div>
+          </div>
+          <h2 id="pass-city"></h2>
+          <p class="pass-airport" id="pass-airport"></p>
+          <p class="pass-reason" id="verdict-reason"></p>
+          <dl class="pass-fields">
+            <div><dt>Layover</dt><dd id="f-layover"></dd></div>
+            <div><dt>In the city</dt><dd id="f-usable"></dd></div>
+            <div><dt>Passport</dt><dd id="f-passport"></dd></div>
+            <div id="f-spend-wrap"><dt>Est. spend</dt><dd id="f-spend"></dd></div>
+          </dl>
+        </div>
+        <div class="pass-stub">
+          <span class="stamp" id="stamp"></span>
+          <p class="stub-title" id="verdict-title"></p>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <div class="board" aria-label="Key times">
+        <div class="board-head"><span>Time</span><span>Checkpoint</span><span>Status</span></div>
+        <div id="board-rows"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <h3>Where your <span id="layover-total"></span> goes</h3>
+          <span class="usable" id="usable"></span>
+        </div>
+        <div class="budget-bar" id="budget-bar" role="img"></div>
+        <ul class="legend" id="budget-legend"></ul>
+      </div>
+
+      <div class="layout">
+        <div class="card">
+          <h3>Your plan</h3>
+          <ol class="timeline" id="timeline"></ol>
+        </div>
+
+        <aside class="side">
+          <div class="card" id="entry-card">
+            <h3>Entry requirements</h3>
+            <p class="pill" id="entry-status"></p>
+            <p id="entry-summary"></p>
+          </div>
+          <div class="card" id="transit-card">
+            <h3>Getting in and out</h3>
+            <p id="transit-mode"></p>
+            <p class="muted" id="transit-cost"></p>
+          </div>
+          <div class="card warn">
+            <h3>If you're running late</h3>
+            <ul id="late-list"></ul>
+          </div>
+          <div class="card">
+            <h3>Practical tips</h3>
+            <ul id="tips-list"></ul>
+          </div>
+          <div class="card">
+            <h3>Staying at the airport instead?</h3>
+            <ul id="fallback-list"></ul>
+          </div>
+          <details class="card">
+            <summary><h3>How we calculated this</h3></summary>
+            <ul id="assumptions-list"></ul>
+            <p class="muted" id="quality-note"></p>
+          </details>
+        </aside>
+      </div>
+
+      <p class="disclaimer">Estimates only. Always confirm visa rules with official sources and keep an eye on your airline app.</p>
+    </section>
+  </main>
+
+  <footer class="footer"><b>LayMax</b> · Built by Devaansh Mann</footer>
+
+  <script src="{{ url_for('static', filename='countries.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

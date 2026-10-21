@@ -1,0 +1,204 @@
+{
+  "airport_name": "Zurich Airport (Flughafen Z\u00fcrich)",
+  "city": "Zurich, Switzerland",
+  "time_budget": {
+    "deplane_and_immigration_min": 45,
+    "transit_to_city_min": 25,
+    "transit_mode": "SBB train (S-Bahn, IR or IC) from Z\u00fcrich Flughafen station, under the Airport Centre, to Z\u00fcrich HB",
+    "transit_cost_estimate": "About CHF 7 for a 2nd-class single (ZVV zones 110+121), or about CHF 14 return. Buy on the SBB app or at ticket machines.",
+    "transit_back_min": 25,
+    "reentry_security_min": 40,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-24T10:45",
+    "arrive_city_at": "2026-11-24T11:10",
+    "at_gate_by": "2026-11-24T13:45",
+    "deadline_math": "13:45 at gate - 40 security - 25 transit back - 30 safety margin = 12:10",
+    "leave_city_by": "2026-11-24T12:10",
+    "usable_city_min": 60,
+    "assumptions": [
+      "Late-morning arrival from a non-Schengen flight, likely at Dock E, with the Skymetro ride and a moderate passport queue. US passports cannot use the e-gates, and first-time EES biometric registration may add a few minutes.",
+      "Bags are checked through, so no baggage claim or bag drop is needed.",
+      "Trains run every few minutes and take about 10-12 minutes. Timing includes walking to the platform and an average wait.",
+      "Re-entry assumes outbound passport control and security for a non-Schengen departure, possibly via Skymetro to Dock E. The 45-minute gate buffer assumes a long-haul onward flight."
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "US passport holders can enter Switzerland (Schengen) visa-free for short stays. Your passport must be valid at least 3 months beyond your departure date and issued within the last 10 years, and you may need to register in the new EU Entry/Exit System. Confirm the current rules with the Swiss State Secretariat for Migration (SEM) or the US State Department before you fly."
+  },
+  "verdict": "CAUTION",
+  "verdict_reason": "After every buffer you get only about 60 minutes in Zurich, so this is a short, tight walk near the main station, not a full city visit. Trains are frequent and reliable, but you must be back on the platform at Zurich HB by 12:10.",
+  "itinerary": [
+    {
+      "start": "2026-11-24T10:45",
+      "end": "2026-11-24T11:10",
+      "type": "transit",
+      "title": "Train into Zurich",
+      "location": "Z\u00fcrich Flughafen station to Z\u00fcrich HB",
+      "description": "Head down to the station under the Airport Centre and take any S-Bahn, IR or IC to Z\u00fcrich HB. The ride itself is only about 10-12 minutes.",
+      "cost_estimate": "CHF 7",
+      "tip": "Buy a return ticket (zones 110+121) on the SBB app or at the machine before boarding. Ticket checks are common."
+    },
+    {
+      "start": "2026-11-24T11:10",
+      "end": "2026-11-24T11:20",
+      "type": "transit",
+      "title": "Walk to Lindenhof",
+      "location": "Z\u00fcrich HB via Bahnhofstrasse and Rennweg",
+      "description": "Glance up at the grand main hall of the 1871 station, then stroll down elegant Bahnhofstrasse and turn into the cobbled lanes of Rennweg.",
+      "cost_estimate": "Free",
+      "tip": "Note your exit from the station so the walk back is quick."
+    },
+    {
+      "start": "2026-11-24T11:20",
+      "end": "2026-11-24T11:35",
+      "type": "sight",
+      "title": "Lindenhof viewpoint",
+      "location": "Lindenhof, Old Town",
+      "description": "This tree-lined hilltop square is the site of the old Roman fort. It looks across the Limmat to the twin towers of the Grossm\u00fcnster, the Niederdorf rooftops, and the university and ETH buildings on the hill.",
+      "cost_estimate": "Free",
+      "tip": "This is the classic Zurich photo. Leave by 11:35 no matter what."
+    },
+    {
+      "start": "2026-11-24T11:35",
+      "end": "2026-11-24T11:45",
+      "type": "sight",
+      "title": "St. Peter and the Schipfe lane",
+      "location": "St. Peterhofstatt and Schipfe, Old Town",
+      "description": "Pass St. Peter's Church, which has the largest church clock face in Europe, then drop down to the Schipfe, a row of old guild-era houses right on the river.",
+      "cost_estimate": "Free",
+      "tip": "Peek into St. Peter only if the door is open and you are on time."
+    },
+    {
+      "start": "2026-11-24T11:45",
+      "end": "2026-11-24T11:55",
+      "type": "transit",
+      "title": "Riverside walk back to the station",
+      "location": "Schipfe to Bahnhofquai, Z\u00fcrich HB",
+      "description": "Follow the Limmat downstream along the riverbank straight back to the main station.",
+      "cost_estimate": "Free",
+      "tip": "Brisk pace: this should take about 8-10 minutes."
+    },
+    {
+      "start": "2026-11-24T11:55",
+      "end": "2026-11-24T12:10",
+      "type": "food",
+      "title": "Swiss treats in the station",
+      "location": "Z\u00fcrich HB / Shopville",
+      "description": "Grab Spr\u00fcngli's famous Luxemburgerli macarons, a Brezelk\u00f6nig pretzel, or a sausage from a station stand to eat on the train.",
+      "cost_estimate": "CHF 10-20",
+      "tip": "In late November the indoor Christmas market in the main hall may already be open. If it is, it makes a festive quick bite."
+    },
+    {
+      "start": "2026-11-24T12:10",
+      "end": "2026-11-24T12:35",
+      "type": "transit",
+      "title": "Train back to the airport",
+      "location": "Z\u00fcrich HB to Z\u00fcrich Flughafen",
+      "description": "Take the first train to Flughafen from the departures board. Most S2, S16, IR and IC trains go there.",
+      "cost_estimate": "CHF 7",
+      "tip": "This is your hard deadline. Be on the platform by 12:10."
+    }
+  ],
+  "estimated_total_spend": "About CHF 25-35 (USD 30-45) per person",
+  "running_late_plan": [
+    "If you are not walking down from Lindenhof by 11:35, skip St. Peter and the Schipfe and go straight back to HB.",
+    "If the station queue is long at 12:05, skip the snack and eat airside after security instead.",
+    "If you miss the 12:10 train, take the very next one (they leave every few minutes). Do not wait for a specific line.",
+    "Be on the platform at Z\u00fcrich HB by 12:10, no matter what."
+  ],
+  "practical_tips": [
+    "Prices are in CHF and contactless cards work almost everywhere, so you do not need cash for this short trip.",
+    "Buy a return train ticket in the SBB app before you leave the airport. Riding without a valid ticket risks a fine of about CHF 90.",
+    "Airport and station Wi-Fi are free, so no eSIM is needed for this route.",
+    "November in Zurich is cold, often 2-8\u00b0C, so keep a warm layer out of your carry-on.",
+    "Coming back, allow time for outbound passport control and the Skymetro to Dock E if your flight is non-Schengen. Expect EES biometric checks for US passports."
+  ],
+  "airport_fallback": [
+    "Stay airside in Dock E and relax in a lounge, or pick up Swiss chocolate from Spr\u00fcngli or L\u00e4derach before your long-haul flight.",
+    "If you clear immigration but skip the city, visit the Observation Deck B for runway views with the Alps on a clear day (small fee), then browse The Circle next to the airport."
+  ],
+  "math": {
+    "layover_min": 270,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-24T10:45",
+    "arrive_city_at": "2026-11-24T11:10",
+    "leave_city_by": "2026-11-24T12:10",
+    "at_gate_by": "2026-11-24T13:45",
+    "usable_city_min": 60,
+    "deadline_math": "13:45 at gate - 40 security - 25 transit back - 30 safety margin = 12:10",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 45
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 25
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 60
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 25
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 40
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "ZRH",
+    "arrival_local": "2026-11-24T10:00",
+    "departure_local": "2026-11-24T14:30",
+    "layover_min": 270,
+    "passport": "United States",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "local food",
+      "architecture"
+    ],
+    "budget": "moderate",
+    "pace": "balanced",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "CAUTION",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 12.2,
+      "plan": 35.2
+    }
+  }
+}

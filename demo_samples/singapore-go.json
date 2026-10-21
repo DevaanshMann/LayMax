@@ -1,0 +1,256 @@
+{
+  "airport_name": "Singapore Changi Airport",
+  "city": "Singapore",
+  "time_budget": {
+    "deplane_and_immigration_min": 35,
+    "transit_to_city_min": 45,
+    "transit_mode": "MRT East-West Line from Changi Airport station, changing at Tanah Merah, to City Hall or Raffles Place. A Grab or taxi (about 25-30 min, SGD 20-30) is a good time-saving alternative.",
+    "transit_cost_estimate": "SGD 2-2.50 each way by MRT using a contactless card",
+    "transit_back_min": 50,
+    "reentry_security_min": 30,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-10T08:05",
+    "arrive_city_at": "2026-11-10T08:50",
+    "at_gate_by": "2026-11-10T19:00",
+    "deadline_math": "19:00 at gate - 30 security - 50 transit back - 30 safety margin = 17:10",
+    "leave_city_by": "2026-11-10T17:10",
+    "usable_city_min": 500,
+    "assumptions": [
+      "Early-morning arrival bank at Changi is busy, but US passport holders can use the automated immigration lanes once the SG Arrival Card is submitted.",
+      "Bags are checked through and the traveler holds the onward boarding pass, so there is no baggage claim or check-in on return.",
+      "The return trip likely falls in the 5-6 pm rush hour, so extra time is allowed for crowded trains or expressway traffic.",
+      "At Changi, security screening happens at the gate, so the boarding buffer covers gate screening and the walk to the gate."
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "US passport holders can enter Singapore visa-free for short visits, but must submit the free SG Arrival Card online within 3 days before arrival. Rules can change, so confirm on the official ICA Singapore website before you fly."
+  },
+  "verdict": "GO",
+  "verdict_reason": "You have over 8 hours in Singapore after every buffer, and the MRT links the airport and city reliably. Just submit the free SG Arrival Card online within 3 days before you land.",
+  "itinerary": [
+    {
+      "start": "2026-11-10T08:05",
+      "end": "2026-11-10T08:50",
+      "type": "transit",
+      "title": "MRT into the city",
+      "location": "Changi Airport MRT to Raffles Place",
+      "description": "Ride the East-West Line shuttle from Changi Airport to Tanah Merah, cross the platform toward Tuas Link, and get off at Raffles Place.",
+      "cost_estimate": "SGD 2-2.50",
+      "tip": "Tap in and out with a contactless Visa or Mastercard. No ticket is needed."
+    },
+    {
+      "start": "2026-11-10T08:50",
+      "end": "2026-11-10T09:00",
+      "type": "transit",
+      "title": "Walk to Far East Square",
+      "location": "Raffles Place to China Street",
+      "description": "An easy 7-minute walk through the CBD to the original Ya Kun outlet.",
+      "cost_estimate": "Free",
+      "tip": "Use exit H at Raffles Place and follow the signs toward Telok Ayer."
+    },
+    {
+      "start": "2026-11-10T09:00",
+      "end": "2026-11-10T09:40",
+      "type": "food",
+      "title": "Kaya toast breakfast at Ya Kun",
+      "location": "Ya Kun Kaya Toast, Far East Square",
+      "description": "Have Singapore's classic breakfast: crisp kaya toast with butter, soft-boiled eggs with soy sauce and white pepper, and a strong kopi.",
+      "cost_estimate": "SGD 6-8",
+      "tip": "Order the 'Set A'. Crack the eggs into the saucer and dip your toast."
+    },
+    {
+      "start": "2026-11-10T09:45",
+      "end": "2026-11-10T10:15",
+      "type": "transit",
+      "title": "Downtown Line to the Botanic Gardens",
+      "location": "Telok Ayer MRT to Botanic Gardens MRT",
+      "description": "Ride the blue Downtown Line direct, with no changes, for about 20 minutes.",
+      "cost_estimate": "SGD 1.50-2",
+      "tip": "Telok Ayer station is a 3-minute walk from Ya Kun."
+    },
+    {
+      "start": "2026-11-10T10:15",
+      "end": "2026-11-10T12:15",
+      "type": "sight",
+      "title": "Singapore Botanic Gardens and National Orchid Garden",
+      "location": "Singapore Botanic Gardens, Bukit Timah entrance",
+      "description": "Walk through Singapore's UNESCO-listed garden, with rainforest trails, swan lakes, and the world's largest orchid display.",
+      "cost_estimate": "SGD 15",
+      "tip": "Entry to the gardens is free. Only the Orchid Garden charges. Go in the morning before the heat and afternoon showers."
+    },
+    {
+      "start": "2026-11-10T12:15",
+      "end": "2026-11-10T12:25",
+      "type": "transit",
+      "title": "Walk to Adam Road",
+      "location": "Botanic Gardens to Adam Road Food Centre",
+      "description": "A short walk from the gardens' Bukit Timah gate to the hawker centre.",
+      "cost_estimate": "Free",
+      "tip": "Use the overhead bridge to cross the road."
+    },
+    {
+      "start": "2026-11-10T12:25",
+      "end": "2026-11-10T13:15",
+      "type": "food",
+      "title": "Hawker lunch at Adam Road Food Centre",
+      "location": "Adam Road Food Centre",
+      "description": "Try famous nasi lemak from Selera Rasa, plus mee rebus or prawn noodles, with fresh sugarcane juice.",
+      "cost_estimate": "SGD 8-14",
+      "tip": "Locals 'chope' tables with tissue packets, so don't sit where you see one. Some stalls are cash-only."
+    },
+    {
+      "start": "2026-11-10T13:15",
+      "end": "2026-11-10T13:45",
+      "type": "transit",
+      "title": "Downtown Line to Gardens by the Bay",
+      "location": "Botanic Gardens MRT to Bayfront MRT",
+      "description": "Ride the Downtown Line direct to Bayfront in about 25 minutes, then follow the signs to Gardens by the Bay.",
+      "cost_estimate": "SGD 1.50-2",
+      "tip": "Take exit B at Bayfront and walk through the underpass."
+    },
+    {
+      "start": "2026-11-10T13:45",
+      "end": "2026-11-10T16:20",
+      "type": "sight",
+      "title": "Gardens by the Bay: Cloud Forest, Flower Dome and Supertrees",
+      "location": "Gardens by the Bay, Marina Bay",
+      "description": "See Singapore's most iconic sight: a misty indoor mountain with a 35m waterfall, a giant flower conservatory, and the towering Supertree Grove.",
+      "cost_estimate": "SGD 46-53",
+      "tip": "The cool conservatories are perfect for the hot, rainy afternoon. Book online to skip the ticket queue."
+    },
+    {
+      "start": "2026-11-10T16:20",
+      "end": "2026-11-10T16:35",
+      "type": "transit",
+      "title": "Walk to Marina Bay Sands",
+      "location": "Gardens by the Bay to The Shoppes at Marina Bay Sands",
+      "description": "Cross the Lions Bridge to the Marina Bay Sands mall, which sits right above Bayfront MRT.",
+      "cost_estimate": "Free",
+      "tip": "If it is pouring, use the covered underpass instead."
+    },
+    {
+      "start": "2026-11-10T16:35",
+      "end": "2026-11-10T17:05",
+      "type": "food",
+      "title": "Snack at Rasapura Masters",
+      "location": "Rasapura Masters food court, B2, Marina Bay Sands",
+      "description": "End with one last local treat: chendol, char kway teow, or a plate of carrot cake.",
+      "cost_estimate": "SGD 6-10",
+      "tip": "Bayfront MRT is right beside the food court, so stop eating by 17:05."
+    },
+    {
+      "start": "2026-11-10T17:10",
+      "end": "2026-11-10T18:00",
+      "type": "transit",
+      "title": "MRT back to Changi",
+      "location": "Bayfront MRT to Changi Airport MRT",
+      "description": "Take the Downtown Line direct to Expo, then change to the East-West Line branch for Changi Airport.",
+      "cost_estimate": "SGD 2-2.50",
+      "tip": "This is your hard deadline. Be on the platform by 17:10, rush hour or not."
+    }
+  ],
+  "estimated_total_spend": "About SGD 90-110 (USD 70-85) per person",
+  "running_late_plan": [
+    "If you leave the Botanic Gardens after 12:30, skip Adam Road and eat at Rasapura Masters instead.",
+    "If you are not inside Gardens by the Bay by 14:15, see only the Cloud Forest and skip the Flower Dome.",
+    "If the MRT is disrupted, take a Grab or taxi from Marina Bay Sands (about 25 min, SGD 20-30).",
+    "Leave the city by 17:10 no matter what. Skip the final snack if needed."
+  ],
+  "practical_tips": [
+    "Submit the free SG Arrival Card on the official ICA site or app within 3 days before arrival, so you can use the automated immigration lanes.",
+    "Contactless cards work on the MRT and almost everywhere else. Carry about SGD 20 in cash for hawker stalls.",
+    "Changi Wi-Fi is free. Get a tourist eSIM if you want maps and Grab in the city.",
+    "November is monsoon season, so expect a short, heavy afternoon downpour. Pack a compact umbrella and keep drinking water.",
+    "At Changi, security screening happens at the gate, so arrive at the gate on time. Shops near the gate are outside screening.",
+    "Your bags are checked through, so you have nothing to collect and can head straight to departure immigration."
+  ],
+  "airport_fallback": [
+    "Airside, visit the Butterfly Garden in Terminal 3, the Sunflower Garden in Terminal 2, and the free movie theatre.",
+    "The Ambassador Transit Lounge and the airside Aerotel offer showers and day-use rooms for a nap.",
+    "Since you can enter visa-free, you could also clear immigration just to see the HSBC Rain Vortex and the Canopy Park at Jewel, connected to Terminal 1."
+  ],
+  "math": {
+    "layover_min": 735,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-10T08:05",
+    "arrive_city_at": "2026-11-10T08:50",
+    "leave_city_by": "2026-11-10T17:10",
+    "at_gate_by": "2026-11-10T19:00",
+    "usable_city_min": 500,
+    "deadline_math": "19:00 at gate - 30 security - 50 transit back - 30 safety margin = 17:10",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 35
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 45
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 500
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 50
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 30
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "SIN",
+    "arrival_local": "2026-11-10T07:30",
+    "departure_local": "2026-11-10T19:45",
+    "layover_min": 735,
+    "passport": "United States",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "local food",
+      "nature and parks"
+    ],
+    "budget": "moderate",
+    "pace": "balanced",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 13.8,
+      "plan": 44.9
+    }
+  }
+}

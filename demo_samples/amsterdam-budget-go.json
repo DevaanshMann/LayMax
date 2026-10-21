@@ -1,0 +1,266 @@
+{
+  "airport_name": "Amsterdam Airport Schiphol",
+  "city": "Amsterdam, Netherlands",
+  "time_budget": {
+    "deplane_and_immigration_min": 55,
+    "transit_to_city_min": 25,
+    "transit_mode": "NS intercity or sprinter train from Schiphol Airport station (directly below Schiphol Plaza) to Amsterdam Centraal, paying by tapping a contactless bank card at the gates",
+    "transit_cost_estimate": "About EUR 6-7 each way, roughly EUR 13 return",
+    "transit_back_min": 30,
+    "reentry_security_min": 50,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-22T10:10",
+    "arrive_city_at": "2026-11-22T10:35",
+    "at_gate_by": "2026-11-22T17:00",
+    "deadline_math": "17:00 at gate - 50 security - 30 transit back - 30 safety margin = 15:10",
+    "leave_city_by": "2026-11-22T15:10",
+    "usable_city_min": 275,
+    "assumptions": [
+      "Arriving from outside Schengen, so the traveler clears Schengen passport control. The EU Entry/Exit System biometric registration can slow first-time entries during the late-morning wave of long-haul arrivals.",
+      "Bags are checked through, so there is no baggage claim and no bag drop on return.",
+      "The onward 17:45 flight is assumed to be long-haul and non-Schengen, which means outbound passport control plus Schiphol's often slow central security. Late-afternoon queues can be long.",
+      "Sunday trains run frequently, about every 10-15 minutes, with no commuter rush on the way back."
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "US passport holders can enter the Netherlands (Schengen) visa-free for short stays, but the EU's ETIAS travel authorization may be required by late 2026, and the Entry/Exit System will register your fingerprints and photo at the border. Check the official EU ETIAS site and the Dutch government (IND) guidance before you fly, and keep your onward boarding pass handy."
+  },
+  "verdict": "GO",
+  "verdict_reason": "You get about 4.5 hours in Amsterdam after every buffer, and trains run every few minutes on Sundays. Your EUR 30 cap covers the train plus street food if you stick to free sights; confirm whether ETIAS applies to you before you fly.",
+  "itinerary": [
+    {
+      "start": "2026-11-22T10:10",
+      "end": "2026-11-22T10:35",
+      "type": "transit",
+      "title": "Train into the city",
+      "location": "Schiphol Airport station to Amsterdam Centraal",
+      "description": "Go down from Schiphol Plaza to the platforms, tap your contactless card at the NS gate, and take any train to Amsterdam Centraal (about 15-20 min).",
+      "cost_estimate": "EUR 6-7",
+      "tip": "Tap in and out with the same card, or you will be charged a much higher fare."
+    },
+    {
+      "start": "2026-11-22T10:35",
+      "end": "2026-11-22T10:50",
+      "type": "sight",
+      "title": "Amsterdam Centraal architecture",
+      "location": "Amsterdam Centraal, Stationsplein side",
+      "description": "Step outside to see Pierre Cuypers' 1889 neo-Renaissance facade, designed by the same architect as the Rijksmuseum.",
+      "cost_estimate": "Free",
+      "tip": "Watch for cyclists. Bike lanes are red, and riders will not stop."
+    },
+    {
+      "start": "2026-11-22T10:50",
+      "end": "2026-11-22T11:00",
+      "type": "transit",
+      "title": "Free ferry across the IJ",
+      "location": "Ferry docks behind Centraal to Buiksloterweg",
+      "description": "The free GVB ferry leaves every few minutes for a 5-minute ride with harbor views.",
+      "cost_estimate": "Free",
+      "tip": "No ticket or card tap is needed. Just walk on."
+    },
+    {
+      "start": "2026-11-22T11:00",
+      "end": "2026-11-22T11:35",
+      "type": "sight",
+      "title": "EYE Filmmuseum and A'DAM Tower",
+      "location": "IJpromenade 1, Amsterdam-Noord",
+      "description": "Wander the angular white EYE building, one of the city's boldest modern designs, then look up at the A'DAM Tower next door.",
+      "cost_estimate": "Free",
+      "tip": "The lobby and terrace are free to enter. Paid exhibitions are optional and not in this budget."
+    },
+    {
+      "start": "2026-11-22T11:35",
+      "end": "2026-11-22T12:05",
+      "type": "transit",
+      "title": "Ferry back, then walk down Damrak",
+      "location": "Buiksloterweg to Dam Square",
+      "description": "Ride back across, then walk past Berlage's brick Beurs van Berlage to the Royal Palace on Dam Square.",
+      "cost_estimate": "Free",
+      "tip": "Admire the palace from the outside. A ticket would break your budget."
+    },
+    {
+      "start": "2026-11-22T12:05",
+      "end": "2026-11-22T12:15",
+      "type": "transit",
+      "title": "Walk to Spui",
+      "location": "Kalverstraat to Spui",
+      "description": "An easy 10-minute stroll south through the old centre.",
+      "cost_estimate": "Free",
+      "tip": "The Begijnhof entrance is a small door on Spui square."
+    },
+    {
+      "start": "2026-11-22T12:15",
+      "end": "2026-11-22T12:45",
+      "type": "sight",
+      "title": "Begijnhof hidden courtyard",
+      "location": "Begijnhof, entrance via Spui",
+      "description": "A peaceful medieval courtyard with Het Houten Huis, one of only two surviving wooden houses in central Amsterdam.",
+      "cost_estimate": "Free",
+      "tip": "Residents live here, so keep your voice low. Photos of the houses are fine."
+    },
+    {
+      "start": "2026-11-22T12:45",
+      "end": "2026-11-22T13:10",
+      "type": "food",
+      "title": "Dutch fries at Vleminckx",
+      "location": "Voetboogstraat 31, near Spui",
+      "description": "Amsterdam's famous fries stand: a cone of thick-cut frites with mayo or 'oorlog' sauce.",
+      "cost_estimate": "EUR 5-7",
+      "tip": "Sunday hours can start late, around 12:00. If it is closed, grab a broodje kroket at a nearby snack bar."
+    },
+    {
+      "start": "2026-11-22T13:10",
+      "end": "2026-11-22T13:40",
+      "type": "transit",
+      "title": "Canal walk via the Golden Bend",
+      "location": "Herengracht between Leidsestraat and Vijzelstraat, to the Rijksmuseum",
+      "description": "Walk past the grandest 17th-century canal mansions, then continue down Spiegelstraat to the Rijksmuseum.",
+      "cost_estimate": "Free",
+      "tip": "The Golden Bend is the best stretch for canal-house architecture photos."
+    },
+    {
+      "start": "2026-11-22T13:40",
+      "end": "2026-11-22T14:20",
+      "type": "sight",
+      "title": "Rijksmuseum passage, gardens and Museumplein",
+      "location": "Museumstraat 1 and Museumplein",
+      "description": "Walk through the cathedral-like passage under the Rijksmuseum, browse its free gardens, then see the Stedelijk's 'bathtub' wing and the Concertgebouw across the square.",
+      "cost_estimate": "Free",
+      "tip": "A museum ticket costs over EUR 25. Save the Rijks for a longer trip."
+    },
+    {
+      "start": "2026-11-22T14:20",
+      "end": "2026-11-22T14:55",
+      "type": "transit",
+      "title": "Walk back via the Flower Market",
+      "location": "Museumplein to Singel Bloemenmarkt to Centraal",
+      "description": "Stroll back through the Spiegelkwartier and past the floating flower market on Singel, buying a stroopwafel on the way.",
+      "cost_estimate": "EUR 2-3",
+      "tip": "Albert Heijn supermarkets sell stroopwafels cheaply if the stalls feel pricey."
+    },
+    {
+      "start": "2026-11-22T14:55",
+      "end": "2026-11-22T15:10",
+      "type": "rest",
+      "title": "Arrive at Centraal, find your platform",
+      "location": "Amsterdam Centraal",
+      "description": "Check the departure boards for the next train to Schiphol Airport, and use the restroom if needed.",
+      "cost_estimate": "Station WC EUR 1",
+      "tip": "Trains to Schiphol leave every few minutes from several platforms. Trust the screens."
+    },
+    {
+      "start": "2026-11-22T15:10",
+      "end": "2026-11-22T15:40",
+      "type": "transit",
+      "title": "Train back to Schiphol",
+      "location": "Amsterdam Centraal to Schiphol Airport",
+      "description": "Tap in with the same card, ride about 15-20 minutes, then head straight up to departures and passport control.",
+      "cost_estimate": "EUR 6-7",
+      "tip": "This is your hard deadline. Be on a train by 15:10 no matter what."
+    }
+  ],
+  "estimated_total_spend": "About EUR 22-28 per person",
+  "running_late_plan": [
+    "If you are still on Museumplein at 14:25, take tram 2 or 12 to Centraal instead of walking (about EUR 3.50, tap your card).",
+    "If you miss the 12:15 Begijnhof slot, skip it and go straight to lunch and the canals.",
+    "If you have fallen badly behind, trains from Amsterdam Zuid (about 25 min walk from Museumplein) also reach Schiphol in about 10 minutes.",
+    "Be on a Schiphol-bound train by 15:10, even if you skip sights."
+  ],
+  "practical_tips": [
+    "Many Amsterdam places are card-only. Contactless Visa or Mastercard works almost everywhere, including NS train gates.",
+    "Use the same physical card or phone to tap in and out. Mixing them triggers a penalty fare.",
+    "Schiphol's outbound passport control and security can have long queues. Do not linger in the Plaza shops on your return.",
+    "Free Wi-Fi is available at Schiphol and in many cafes. An EU eSIM is only worth it if you want live maps.",
+    "Bags are checked through, so you have nothing to collect or store. Just carry a light jacket, because November is cold, wet and windy.",
+    "Before you fly, check whether ETIAS is required yet, and expect fingerprint and photo registration at the border."
+  ],
+  "airport_fallback": [
+    "Visit the free Rijksmuseum Schiphol annex airside, which shows a small rotating selection of Dutch masters.",
+    "Relax in the Airport Library airside for Dutch books, music and calm seating.",
+    "Lounge 2 and Lounge 3 have quiet seating areas and runway views if you just want to rest."
+  ],
+  "math": {
+    "layover_min": 510,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-22T10:10",
+    "arrive_city_at": "2026-11-22T10:35",
+    "leave_city_by": "2026-11-22T15:10",
+    "at_gate_by": "2026-11-22T17:00",
+    "usable_city_min": 275,
+    "deadline_math": "17:00 at gate - 50 security - 30 transit back - 30 safety margin = 15:10",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 55
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 25
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 275
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 30
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 50
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "AMS",
+    "arrival_local": "2026-11-22T09:15",
+    "departure_local": "2026-11-22T17:45",
+    "layover_min": 510,
+    "passport": "United States",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "art and museums",
+      "architecture"
+    ],
+    "budget": "shoestring",
+    "pace": "balanced",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": 30.0,
+    "budget_currency": "EUR",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 13.4,
+      "plan": 46.3
+    }
+  }
+}

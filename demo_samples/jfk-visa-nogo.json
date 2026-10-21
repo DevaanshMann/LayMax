@@ -1,0 +1,153 @@
+{
+  "airport_name": "John F. Kennedy International Airport",
+  "city": "New York City, USA",
+  "time_budget": {
+    "deplane_and_immigration_min": 85,
+    "transit_to_city_min": 60,
+    "transit_mode": "Yellow taxi (flat fare) or pre-booked private car to Midtown Manhattan / Museum Mile",
+    "transit_cost_estimate": "About USD 90-110 each way by taxi (USD 70 flat fare plus surcharges, tolls and tip); a private car is about USD 120-160",
+    "transit_back_min": 75,
+    "reentry_security_min": 45,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 45,
+    "exit_airport_at": "2026-11-14T10:25",
+    "arrive_city_at": "2026-11-14T11:25",
+    "at_gate_by": "2026-11-14T20:15",
+    "deadline_math": "20:15 at gate - 45 security - 75 transit back - 45 safety margin = 17:30",
+    "leave_city_by": "2026-11-14T17:30",
+    "usable_city_min": 365,
+    "assumptions": [
+      "Saturday mid-morning is a busy international arrival bank at JFK, so the non-US passport immigration line is long",
+      "Even with bags checked through, all passengers must collect their bags at their first US airport, clear customs and re-drop them, and this time is included",
+      "The return in the late afternoon or early evening on a Saturday allows for heavy Van Wyck Expressway traffic",
+      "These timings are for reference only, because this traveler cannot legally enter the US without a visa"
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_required",
+    "can_exit_airport": false,
+    "summary": "Indian passport holders need a US visa, such as a B1/B2 or a C-1 transit visa, to enter the United States, and you do not have one. The US has no airside transit, so every connecting passenger must clear US immigration. That means you cannot leave the airport, and you also cannot make this connection as booked without a visa, and the airline will likely refuse to board you. Contact your airline right away to reroute through a hub that has visa-free transit, or apply for a US visa, and confirm the rules with the US Department of State or the US Embassy in India."
+  },
+  "verdict": "NO_GO",
+  "verdict_reason": "You cannot make this connection as booked. The US has no airside transit, and you need a US visa that you do not have, so the airline will likely refuse to board you. Before you fly, contact your airline to reroute through a hub with airside transit (such as Doha, Dubai or Abu Dhabi), or apply for a US B1/B2 or C-1 visa. US visa waits in India can be long, so rerouting is usually the faster fix.",
+  "itinerary": [
+    {
+      "start": "2026-11-14T09:00",
+      "end": "2026-11-14T09:30",
+      "type": "airport",
+      "title": "Fix your connection first",
+      "location": "Airline transfer or service desk, JFK international arrivals",
+      "description": "This should be solved before departure day. If you have already landed at JFK without a visa, tell airline staff and US Customs and Border Protection (CBP) right away. Do not try to clear immigration on your own.",
+      "cost_estimate": "Varies",
+      "tip": "Keep your passport, both boarding passes and your booking reference in hand. Ask the airline to rebook or return you, not to sightsee."
+    },
+    {
+      "start": "2026-11-14T09:30",
+      "end": "2026-11-14T20:15",
+      "type": "rest",
+      "title": "Stay where CBP and the airline direct you",
+      "location": "Federal Inspection Services area, JFK",
+      "description": "Without a visa, you will be held in the inspection area until the airline arranges your onward or return flight. No lounges, shops or city time are available.",
+      "cost_estimate": "Free",
+      "tip": "Stay calm and cooperative, keep your phone charged, and message family your new flight details as soon as you have them."
+    }
+  ],
+  "estimated_total_spend": "About USD 0 during the layover (rebooking or visa fees are separate)",
+  "running_late_plan": [
+    "If the airline has not confirmed a fix 72 hours before departure, call again and ask about a reroute via a Gulf or European hub with airside transit.",
+    "If you are told at check-in in India that you cannot board, ask for the next itinerary that avoids US transit.",
+    "Do not travel on this ticket hoping it will work out at JFK. It will not."
+  ],
+  "practical_tips": [
+    "Indian passport holders need a US visa even just to change planes in the US. There is no visa-free or airside transit at any US airport.",
+    "Check the rules on the US Department of State website or with the US Embassy in India, and confirm with your airline's visa or Timatic check.",
+    "If you reroute, check the transit rules for the new hub too. Many Gulf hubs allow airside transit for Indian passports without a visa.",
+    "If you do get a US visa later, remember that all bags must be collected at the first US airport, cleared through customs and dropped again.",
+    "Save your airline's WhatsApp or phone support so you can rebook fast."
+  ],
+  "airport_fallback": [
+    "There is no airside option at JFK for you. Without a visa, you cannot reach the terminal lounges, shops or gates.",
+    "If you reroute through Doha, Dubai or Abu Dhabi, you can enjoy airside lounges, showers and transit hotels during the new connection.",
+    "On departure day, rest at your origin airport's lounge until the airline confirms your rebooked flights."
+  ],
+  "math": {
+    "layover_min": 720,
+    "safety_margin_min": 45,
+    "exit_airport_at": "2026-11-14T10:25",
+    "arrive_city_at": "2026-11-14T11:25",
+    "leave_city_by": "2026-11-14T17:30",
+    "at_gate_by": "2026-11-14T20:15",
+    "usable_city_min": 365,
+    "deadline_math": "20:15 at gate - 45 security - 75 transit back - 45 safety margin = 17:30",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 85
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 60
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 365
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 45
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 75
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 45
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "JFK",
+    "arrival_local": "2026-11-14T09:00",
+    "departure_local": "2026-11-14T21:00",
+    "layover_min": 720,
+    "passport": "India",
+    "visa_status": "need_but_dont_have",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "art and museums"
+    ],
+    "budget": "splurge",
+    "pace": "relaxed",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "cautious",
+    "safety_margin_min": 45,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "NO_GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 12.6,
+      "plan": 20.6
+    }
+  }
+}

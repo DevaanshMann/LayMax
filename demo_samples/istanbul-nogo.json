@@ -1,0 +1,204 @@
+{
+  "airport_name": "Istanbul Airport (IST)",
+  "city": "Istanbul, T\u00fcrkiye",
+  "time_budget": {
+    "deplane_and_immigration_min": 65,
+    "transit_to_city_min": 85,
+    "transit_mode": "M11 metro from the airport to Gayrettepe, then M2 metro to Vezneciler, a short walk to the Grand Bazaar",
+    "transit_cost_estimate": "Roughly TRY 150-250 each way with an Istanbulkart, plus a one-time card fee. Fares rise often, so check current prices.",
+    "transit_back_min": 90,
+    "reentry_security_min": 60,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-16T14:20",
+    "arrive_city_at": "2026-11-16T15:45",
+    "at_gate_by": "2026-11-16T18:45",
+    "deadline_math": "18:45 at gate - 60 security - 90 transit back - 30 safety margin = 15:45",
+    "leave_city_by": "2026-11-16T15:45",
+    "usable_city_min": 0,
+    "assumptions": [
+      "Early-afternoon arrival at IST means long walks from the gate and moderate-to-busy passport queues, plus 15-20 min at baggage claim because bags are not checked through.",
+      "Bags must be stored at the airport left-luggage desk or dropped early for the onward flight. That adds time on arrival, and on return the bag drop happens before the terminal-entry screening, passport control and security.",
+      "Rail times assume normal M11 and M2 frequency; the metro avoids road traffic, but the return trip includes building late-afternoon crowds and the long walk from the M11 station to departures.",
+      "These core steps alone use about 345 of the 375 minutes before your safety margin, so a trip into the old city is extremely tight."
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "German citizens can enter T\u00fcrkiye visa-free for tourist stays of up to 90 days, with a passport or a valid national ID card. Rules can change, so confirm with the official Turkish Ministry of Foreign Affairs or the German Foreign Office before you fly."
+  },
+  "verdict": "NO_GO",
+  "verdict_reason": "After immigration, baggage, metro both ways and re-check, you have zero minutes in the city. Stay at Istanbul Airport, sort your bag, and enjoy Turkish food and sweets shopping without any risk to your flight.",
+  "itinerary": [
+    {
+      "start": "2026-11-16T13:15",
+      "end": "2026-11-16T14:20",
+      "type": "airport",
+      "title": "Deplane, passport control and baggage claim",
+      "location": "Istanbul Airport arrivals hall",
+      "description": "Your bag is not checked through, so clear passport control and collect it at the carousel. Follow the arrivals signs; the walk from the gate can be long.",
+      "cost_estimate": "Free",
+      "tip": "Have your onward booking ready in case the officer asks about your connection."
+    },
+    {
+      "start": "2026-11-16T14:20",
+      "end": "2026-11-16T14:45",
+      "type": "airport",
+      "title": "Sort your bag: early drop or left-luggage",
+      "location": "Departures check-in hall, then arrivals-level luggage storage",
+      "description": "First ask your onward airline's counter or info desk whether they accept an early bag drop. If not, store it at the airport left-luggage office until check-in opens.",
+      "cost_estimate": "TRY 0-700",
+      "tip": "International check-in usually opens about 3 hours before departure, around 16:30. Confirm with your airline."
+    },
+    {
+      "start": "2026-11-16T14:45",
+      "end": "2026-11-16T15:45",
+      "type": "food",
+      "title": "Late Turkish lunch landside",
+      "location": "Landside food outlets, departures level",
+      "description": "Sit down for pide, k\u00f6fte or a lentil soup with bread, then a glass of Turkish tea. Landside prices are a bit lower than airside.",
+      "cost_estimate": "TRY 400-700",
+      "tip": "Simit and ayran are the cheapest filling option if you want to save money."
+    },
+    {
+      "start": "2026-11-16T15:45",
+      "end": "2026-11-16T16:30",
+      "type": "rest",
+      "title": "Rest and recharge",
+      "location": "Landside seating, departures level",
+      "description": "Find a seat with a socket, charge your phone, and relax before check-in.",
+      "cost_estimate": "Free",
+      "tip": "Set an alarm for 16:25 so you are at the counter as soon as it opens."
+    },
+    {
+      "start": "2026-11-16T16:30",
+      "end": "2026-11-16T17:30",
+      "type": "airport",
+      "title": "Collect your bag, check in, passport control and security",
+      "location": "Check-in hall to airside",
+      "description": "Pick up your stored bag, drop it at your airline's counter, then go through exit passport control and security.",
+      "cost_estimate": "Free",
+      "tip": "Queues build in the evening. Do not linger landside after check-in."
+    },
+    {
+      "start": "2026-11-16T17:30",
+      "end": "2026-11-16T18:15",
+      "type": "activity",
+      "title": "Turkish sweets and market-style shopping airside",
+      "location": "Airside duty-free and shopping area",
+      "description": "Browse baklava, lokum (Turkish delight), Turkish coffee and spices. It's the closest thing to a bazaar you can get today.",
+      "cost_estimate": "TRY 200-600",
+      "tip": "Airside prices are high. Taste first, and buy one small box if it fits your shoestring budget."
+    },
+    {
+      "start": "2026-11-16T18:15",
+      "end": "2026-11-16T18:45",
+      "type": "transit",
+      "title": "Walk to your gate",
+      "location": "Istanbul Airport departure piers",
+      "description": "Check the screens for your gate and head there with time to spare. Walks to the far piers can take 20+ minutes.",
+      "cost_estimate": "Free",
+      "tip": "Be at the gate by 18:45 no matter what."
+    }
+  ],
+  "estimated_total_spend": "About TRY 800-1,600 (USD 20-40) per person",
+  "running_late_plan": [
+    "If immigration and baggage claim run past 14:45, skip the landside lunch and eat airside after security.",
+    "If your check-in counter is not open by 16:45, ask at the airline info desk right away.",
+    "Leave the shops by 18:15 at the latest. Gates at IST can be very far apart."
+  ],
+  "practical_tips": [
+    "Cards work almost everywhere at the airport. You only need a little cash in TRY, if any.",
+    "Free airport Wi-Fi usually needs a code by SMS or a passport scan at a kiosk. Set it up early.",
+    "Your bag is not checked through, so collect it and re-check it. Keep valuables and medicines in your carry-on.",
+    "Istanbul Airport is huge. Allow extra walking time everywhere and watch the gate screens.",
+    "Bring your German passport or national ID. Either works for entry."
+  ],
+  "airport_fallback": [
+    "If you have time to spare airside, look for the airport museum exhibits. Check that they are open on the day.",
+    "A pay-in lounge gives you showers and quiet seats, but it costs well over a shoestring budget.",
+    "Quiet seating areas near the far piers are good for a nap. Set an alarm."
+  ],
+  "math": {
+    "layover_min": 375,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-16T14:20",
+    "arrive_city_at": "2026-11-16T15:45",
+    "leave_city_by": "2026-11-16T15:45",
+    "at_gate_by": "2026-11-16T18:45",
+    "usable_city_min": 0,
+    "deadline_math": "18:45 at gate - 60 security - 90 transit back - 30 safety margin = 15:45",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 65
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 85
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 0
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 90
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 60
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "IST",
+    "arrival_local": "2026-11-16T13:15",
+    "departure_local": "2026-11-16T19:30",
+    "layover_min": 375,
+    "passport": "Germany",
+    "visa_status": "not_needed",
+    "bags_checked_through": false,
+    "terminal_change": false,
+    "interests": [
+      "local food",
+      "markets and shopping"
+    ],
+    "budget": "shoestring",
+    "pace": "balanced",
+    "mobility": "no limitations",
+    "visited_before": true,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "NO_GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 16.0,
+      "plan": 32.6
+    }
+  }
+}

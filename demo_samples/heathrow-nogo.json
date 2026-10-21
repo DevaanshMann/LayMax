@@ -1,0 +1,182 @@
+{
+  "airport_name": "London Heathrow Airport",
+  "city": "London, United Kingdom",
+  "time_budget": {
+    "deplane_and_immigration_min": 60,
+    "transit_to_city_min": 30,
+    "transit_mode": "Heathrow Express from the Heathrow terminal station to London Paddington (15 min ride, trains every 15 min)",
+    "transit_cost_estimate": "About GBP 25 each way walk-up, less if booked ahead online",
+    "transit_back_min": 35,
+    "reentry_security_min": 40,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-12T07:50",
+    "arrive_city_at": "2026-11-12T08:20",
+    "at_gate_by": "2026-11-12T09:35",
+    "deadline_math": "09:35 at gate - 40 security - 35 transit back - 30 safety margin = 07:50",
+    "leave_city_by": "2026-11-12T07:50",
+    "usable_city_min": -30,
+    "assumptions": [
+      "06:50 is Heathrow's peak transatlantic arrival wave, so the immigration hall is busy, though Canadian passport holders can use e-gates",
+      "Bags are checked through and there is no terminal change, so no baggage claim or terminal transfer is needed",
+      "Morning departures security at Heathrow is moderately busy; the return trip may overlap the London morning rush",
+      "The onward flight is assumed to be international, with gates closing well before departure"
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "Canadian citizens do not need a visa for the UK. They do need an approved UK Electronic Travel Authorisation (ETA) to pass through UK border control, including during a layover. Apply in advance and confirm the current rules on GOV.UK before you fly."
+  },
+  "verdict": "NO_GO",
+  "verdict_reason": "After immigration, transit and security, you would have to head back before you even reached central London, so there is no time to see the city. Stay airside and make it a comfortable morning at Heathrow instead.",
+  "itinerary": [
+    {
+      "start": "2026-11-12T06:50",
+      "end": "2026-11-12T07:40",
+      "type": "airport",
+      "title": "Follow the purple Flight Connections signs",
+      "location": "Heathrow arrival gate to transfer security",
+      "description": "Skip the Arrivals and UK Border signs. Follow the purple Flight Connections route to transfer security so you stay airside the whole time.",
+      "cost_estimate": "Free",
+      "tip": "The 06:50 transatlantic wave makes transfer security busy. Have liquids and laptop ready, and check the screens for your departure terminal and gate."
+    },
+    {
+      "start": "2026-11-12T07:40",
+      "end": "2026-11-12T08:30",
+      "type": "rest",
+      "title": "Shower and breakfast in an airside lounge",
+      "location": "Plaza Premium Lounge, airside (Terminal 2, 3 or 5)",
+      "description": "Freshen up after the overnight flight with a hot shower, then have a cooked English breakfast and coffee in a quiet seat.",
+      "cost_estimate": "GBP 45-60",
+      "tip": "Book online in advance for a better rate. If your ticket or card includes lounge access, use your airline's lounge instead."
+    },
+    {
+      "start": "2026-11-12T08:30",
+      "end": "2026-11-12T09:05",
+      "type": "sight",
+      "title": "Architecture walk of your terminal",
+      "location": "Airside departures hall, your departure terminal",
+      "description": "In Terminal 5, look up at Rogers Stirk Harbour's huge wave roof and its sweeping steel columns. In Terminal 2, Luis Vidal's undulating skylit roof floods the hall with daylight.",
+      "cost_estimate": "Free",
+      "tip": "The big windows by the gates make good runway-view spots for a last look."
+    },
+    {
+      "start": "2026-11-12T09:05",
+      "end": "2026-11-12T09:15",
+      "type": "airport",
+      "title": "Check your gate and grab water",
+      "location": "Departure boards, airside",
+      "description": "Confirm your gate on the screens and pick up a bottle of water or a snack for the flight.",
+      "cost_estimate": "GBP 3-6",
+      "tip": "Heathrow often shows gates late. Gate details usually appear about 45-60 minutes before departure."
+    },
+    {
+      "start": "2026-11-12T09:15",
+      "end": "2026-11-12T09:35",
+      "type": "transit",
+      "title": "Walk or take the shuttle to your gate",
+      "location": "Departure gate",
+      "description": "Head to your gate now. Allow extra time if it is in a T5 B or C satellite, which you reach by the underground transit train.",
+      "cost_estimate": "Free",
+      "tip": "Some Heathrow gates are a 15-20 minute walk away, so do not wait for the final call."
+    }
+  ],
+  "estimated_total_spend": "About GBP 50-65 (USD 65-85) per person",
+  "running_late_plan": [
+    "If transfer security is still not done by 08:00, skip the shower and have a quick breakfast near your gate area.",
+    "If your gate is in T5 B or C, leave for it as soon as it is announced, no later than 09:15.",
+    "Never go through UK Border or landside at any point. You cannot get back airside in time."
+  ],
+  "practical_tips": [
+    "Contactless cards and phones work everywhere airside, so you do not need pounds in cash.",
+    "Heathrow's free Wi-Fi is unlimited and reliable, so you do not need a SIM for this layover.",
+    "Your bags are checked through, so you have nothing to collect. Just follow the purple Flight Connections signs.",
+    "Transfer security is strict: liquids under 100 ml in a clear bag, and expect bag rechecks during the morning rush.",
+    "UK ETA rules for airside transit have been changing. Confirm on GOV.UK before you fly whether you need one even if you stay airside."
+  ],
+  "airport_fallback": [
+    "You are staying airside today. For somewhere to rest, try the quiet seating areas near the T5 B/C gates or the window seats overlooking the runway.",
+    "The Heathrow shopping areas include Fortnum & Mason and Harrods outlets for classic London treats to take on the plane."
+  ],
+  "math": {
+    "layover_min": 210,
+    "safety_margin_min": 30,
+    "exit_airport_at": "2026-11-12T07:50",
+    "arrive_city_at": "2026-11-12T08:20",
+    "leave_city_by": "2026-11-12T07:50",
+    "at_gate_by": "2026-11-12T09:35",
+    "usable_city_min": -30,
+    "deadline_math": "09:35 at gate - 40 security - 35 transit back - 30 safety margin = 07:50",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 60
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 30
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 0
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 30
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 35
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 40
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "LHR",
+    "arrival_local": "2026-11-12T06:50",
+    "departure_local": "2026-11-12T10:20",
+    "layover_min": 210,
+    "passport": "Canada",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "architecture"
+    ],
+    "budget": "moderate",
+    "pace": "packed",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "balanced",
+    "safety_margin_min": 30,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "NO_GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 13.3,
+      "plan": 25.4
+    }
+  }
+}

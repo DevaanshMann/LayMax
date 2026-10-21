@@ -1,0 +1,287 @@
+{
+  "airport_name": "Narita International Airport",
+  "city": "Tokyo, Japan",
+  "time_budget": {
+    "deplane_and_immigration_min": 50,
+    "transit_to_city_min": 65,
+    "transit_mode": "Keisei Skyliner from Narita Airport Station to Keisei Ueno, then the JR Yamanote Line to your first stop (for example Shinjuku or Shibuya for nightlife)",
+    "transit_cost_estimate": "About JPY 2,580 Skyliner each way plus JPY 170-210 on the JR Yamanote Line",
+    "transit_back_min": 70,
+    "reentry_security_min": 40,
+    "boarding_buffer_min": 45,
+    "safety_margin_min": 15,
+    "exit_airport_at": "2026-11-18T18:30",
+    "arrive_city_at": "2026-11-18T19:35",
+    "at_gate_by": "2026-11-19T10:10",
+    "deadline_math": "10:10 at gate - 40 security - 70 transit back - 15 safety margin = 08:05",
+    "leave_city_by": "2026-11-19T08:05",
+    "usable_city_min": 750,
+    "assumptions": [
+      "Narita's early-evening arrival wave makes immigration moderately busy, so completing Visit Japan Web QR codes beforehand will help",
+      "Bags are checked through, so there is no baggage claim; carry overnight essentials in your cabin bag",
+      "The return assumes a morning Skyliner, which runs from about 6:30, during Tokyo rush hour; reserved Skyliner seats are not affected by commuter crowds",
+      "Trains from Tokyo to Narita stop around midnight, so the overnight stay needs a city or airport hotel"
+    ]
+  },
+  "entry_requirements": {
+    "status": "visa_free",
+    "can_exit_airport": true,
+    "summary": "Australian passport holders can enter Japan visa-free for short stays of up to 90 days, so you can leave the airport and stay overnight in Tokyo. Rules can change, so confirm with the Ministry of Foreign Affairs of Japan or your nearest Japanese embassy before you fly."
+  },
+  "verdict": "GO",
+  "verdict_reason": "You have over 12 hours in Tokyo after every buffer, enough for a full night out in Shibuya and Shinjuku plus a good sleep. Trains to Narita stop around midnight, so book a hotel near Keisei Ueno before you fly and reserve a morning Skyliner seat.",
+  "itinerary": [
+    {
+      "start": "2026-11-18T18:30",
+      "end": "2026-11-18T19:35",
+      "type": "transit",
+      "title": "Skyliner into Tokyo",
+      "location": "Narita Airport Station to Keisei Ueno",
+      "description": "Take the Keisei Skyliner, about 45 minutes nonstop to Ueno, with reserved seats and space for your cabin bag.",
+      "cost_estimate": "JPY 2,580",
+      "tip": "Buy a return Skyliner ticket now and reserve a seat on the first departure after 08:05 tomorrow."
+    },
+    {
+      "start": "2026-11-18T19:35",
+      "end": "2026-11-18T19:55",
+      "type": "rest",
+      "title": "Check in and drop your bag",
+      "location": "Hotel near Keisei Ueno / Ueno Station",
+      "description": "Check in to a pre-booked capsule hotel or business hotel a few minutes from Keisei Ueno and leave your cabin bag.",
+      "cost_estimate": "JPY 5,000-12,000",
+      "tip": "Staying near Keisei Ueno makes the morning effortless. Tell the front desk you will check in late, after 19:30."
+    },
+    {
+      "start": "2026-11-18T19:55",
+      "end": "2026-11-18T20:30",
+      "type": "transit",
+      "title": "Ginza Line to Shibuya",
+      "location": "Ueno to Shibuya (Tokyo Metro Ginza Line)",
+      "description": "A direct ride of about 30 minutes, with no transfers.",
+      "cost_estimate": "JPY 210-260",
+      "tip": "Tap in with Suica so you never need to buy individual tickets."
+    },
+    {
+      "start": "2026-11-18T20:30",
+      "end": "2026-11-18T21:15",
+      "type": "sight",
+      "title": "Shibuya Scramble Crossing at night",
+      "location": "Hachiko Exit, Shibuya",
+      "description": "Walk the world's most famous crossing under the neon, say hi to the Hachiko statue, and shoot the crowd from above.",
+      "cost_estimate": "Free",
+      "tip": "For the classic overhead shot, use the glass corridor between Shibuya Station and Shibuya Mark City. Slow shutter speeds turn the crowd into streaks."
+    },
+    {
+      "start": "2026-11-18T21:15",
+      "end": "2026-11-18T21:35",
+      "type": "transit",
+      "title": "Yamanote Line to Shinjuku",
+      "location": "Shibuya to Shinjuku (JR Yamanote Line)",
+      "description": "About 7 minutes on the train, then a short walk to the West Exit.",
+      "cost_estimate": "JPY 170",
+      "tip": "Follow the signs for the West Exit. Shinjuku Station is a maze, so give yourself the extra minutes."
+    },
+    {
+      "start": "2026-11-18T21:35",
+      "end": "2026-11-18T22:35",
+      "type": "food",
+      "title": "Yakitori in Omoide Yokocho",
+      "location": "Omoide Yokocho (Memory Lane), Shinjuku West",
+      "description": "Squeeze into a tiny smoky counter for skewers of negima, tsukune and hatsu with a cold beer. The red lanterns make this lane a dream for photos.",
+      "cost_estimate": "JPY 3,000-4,500",
+      "tip": "Bring cash. Some stalls charge a small seating fee, and a few ask that you order a drink."
+    },
+    {
+      "start": "2026-11-18T22:35",
+      "end": "2026-11-18T22:50",
+      "type": "transit",
+      "title": "Neon walk through Kabukicho",
+      "location": "Shinjuku Station East to Kabukicho (Godzilla Head)",
+      "description": "Walk under the Kabukicho gate to the Godzilla head peering over Hotel Gracery for some classic neon shots.",
+      "cost_estimate": "Free",
+      "tip": "Ignore the touts on the street and never follow anyone into a bar."
+    },
+    {
+      "start": "2026-11-18T22:50",
+      "end": "2026-11-18T23:55",
+      "type": "activity",
+      "title": "Bar-hop Golden Gai",
+      "location": "Shinjuku Golden Gai",
+      "description": "Six narrow alleys packed with around 200 bars that seat six to ten people each. Pick one or two that post English signs and welcome visitors.",
+      "cost_estimate": "JPY 2,000-4,000",
+      "tip": "Many bars charge a JPY 500-1,500 cover, usually posted on the door. Ask before you take photos inside."
+    },
+    {
+      "start": "2026-11-18T23:55",
+      "end": "2026-11-19T00:30",
+      "type": "transit",
+      "title": "Yamanote Line back to Ueno",
+      "location": "Shinjuku to Ueno (JR Yamanote Line)",
+      "description": "About 25 minutes on the train back to your hotel.",
+      "cost_estimate": "JPY 210",
+      "tip": "The last trains run around 00:30, so do not linger past midnight. A taxi costs about JPY 6,000-8,000."
+    },
+    {
+      "start": "2026-11-19T00:30",
+      "end": "2026-11-19T06:15",
+      "type": "rest",
+      "title": "Sleep",
+      "location": "Your hotel near Ueno",
+      "description": "Recharge before your flight. Set two alarms.",
+      "cost_estimate": "Included",
+      "tip": "Pack your bag tonight so checkout takes two minutes."
+    },
+    {
+      "start": "2026-11-19T06:15",
+      "end": "2026-11-19T06:25",
+      "type": "rest",
+      "title": "Check out",
+      "location": "Your hotel near Ueno",
+      "description": "Grab your cabin bag and head out into the fresh morning air.",
+      "cost_estimate": "Included",
+      "tip": "Double-check your passport and Skyliner ticket before leaving the room."
+    },
+    {
+      "start": "2026-11-19T06:25",
+      "end": "2026-11-19T07:15",
+      "type": "sight",
+      "title": "Sunrise photos in Ueno Park",
+      "location": "Ueno Park and Shinobazu Pond (Bentendo)",
+      "description": "In mid-November the ginkgo and maple trees are turning, and the pond and Bentendo temple hall are calm and golden at this hour.",
+      "cost_estimate": "Free",
+      "tip": "The park sits right beside Keisei Ueno, so you never stray far from your train."
+    },
+    {
+      "start": "2026-11-19T07:20",
+      "end": "2026-11-19T07:50",
+      "type": "food",
+      "title": "Japanese breakfast set",
+      "location": "Matsuya or Yoshinoya near Ueno Station",
+      "description": "A quick teishoku breakfast of grilled salmon or gyudon with miso soup and rice, an everyday Tokyo ritual.",
+      "cost_estimate": "JPY 500-800",
+      "tip": "Order at the ticket machine by the door. These chains open 24 hours."
+    },
+    {
+      "start": "2026-11-19T07:50",
+      "end": "2026-11-19T08:05",
+      "type": "transit",
+      "title": "Walk to Keisei Ueno",
+      "location": "Keisei Ueno Station (Ueno Park side)",
+      "description": "A short walk to the Skyliner platform.",
+      "cost_estimate": "Free",
+      "tip": "Be at the ticket gates by 08:00."
+    },
+    {
+      "start": "2026-11-19T08:05",
+      "end": "2026-11-19T09:15",
+      "type": "transit",
+      "title": "Skyliner back to Narita",
+      "location": "Keisei Ueno to Narita Airport",
+      "description": "Reserved-seat express back to the airport, unaffected by rush-hour crowds. This is your hard deadline.",
+      "cost_estimate": "JPY 2,580",
+      "tip": "Get off at the right terminal stop: Airport Terminal 2\u00b73 comes first, then Narita Airport (Terminal 1)."
+    }
+  ],
+  "estimated_total_spend": "About JPY 19,000-26,000 (USD 125-170) per person, including the hotel",
+  "running_late_plan": [
+    "If you are not leaving Omoide Yokocho by 22:45, skip Kabukicho and go straight to Golden Gai.",
+    "If you are not on a Yamanote train by 00:20, take a taxi to Ueno (about JPY 6,000-8,000) rather than risk being stranded.",
+    "In the morning, if you are not out of the hotel by 06:45, skip the park and eat breakfast near the station.",
+    "If the Skyliner is disrupted, take the Keisei Access Express or Main Line limited express from Ueno or Nippori, or the JR Narita Express from Tokyo Station, and leave immediately."
+  ],
+  "practical_tips": [
+    "Set up a Suica card on your phone (Apple Wallet) or buy a Welcome Suica at Narita. It works on every train and in convenience stores.",
+    "Carry JPY 10,000-15,000 in cash. Yokocho stalls and Golden Gai bars are often cash-only, and 7-Eleven ATMs accept foreign cards.",
+    "Complete Visit Japan Web before landing to speed up immigration, and grab an eSIM or pocket Wi-Fi for maps.",
+    "Your bags are checked through, so pack a toothbrush, a charger and a change of clothes in your cabin bag.",
+    "Book the hotel and the Skyliner seats in advance. Ueno capsule hotels keep this trip near the moderate range, while business hotels push it higher.",
+    "Some Golden Gai bars allow smoking indoors. Peek in before you sit down if that bothers you."
+  ],
+  "airport_fallback": [
+    "9h nine hours Narita, a capsule hotel at Terminal 2, sells overnight stays and short shower-and-nap stays.",
+    "Narita's terminal restaurants and the observation deck close in the evening, so eat dinner early and grab supplies at a convenience store for later.",
+    "Nearby hotels like Narita Tobu Hotel Airport run free shuttles and are an easy, low-stress alternative if you are too tired to go into the city."
+  ],
+  "math": {
+    "layover_min": 1035,
+    "safety_margin_min": 15,
+    "exit_airport_at": "2026-11-18T18:30",
+    "arrive_city_at": "2026-11-18T19:35",
+    "leave_city_by": "2026-11-19T08:05",
+    "at_gate_by": "2026-11-19T10:10",
+    "usable_city_min": 750,
+    "deadline_math": "10:10 at gate - 40 security - 70 transit back - 15 safety margin = 08:05",
+    "segments": [
+      {
+        "key": "immigration",
+        "label": "Deplane + immigration",
+        "min": 50
+      },
+      {
+        "key": "transit",
+        "label": "Transit to city",
+        "min": 65
+      },
+      {
+        "key": "city",
+        "label": "Time in city",
+        "min": 750
+      },
+      {
+        "key": "margin",
+        "label": "Safety margin",
+        "min": 15
+      },
+      {
+        "key": "transit",
+        "label": "Transit back",
+        "min": 70
+      },
+      {
+        "key": "security",
+        "label": "Security + exit immigration",
+        "min": 40
+      },
+      {
+        "key": "boarding",
+        "label": "At gate before departure",
+        "min": 45
+      }
+    ]
+  },
+  "trip": {
+    "airport": "NRT",
+    "arrival_local": "2026-11-18T17:40",
+    "departure_local": "2026-11-19T10:55",
+    "layover_min": 1035,
+    "passport": "Australia",
+    "visa_status": "not_needed",
+    "bags_checked_through": true,
+    "terminal_change": false,
+    "interests": [
+      "nightlife",
+      "local food",
+      "photography spots"
+    ],
+    "budget": "moderate",
+    "pace": "packed",
+    "mobility": "no limitations",
+    "visited_before": false,
+    "already_seen": "",
+    "budget_amount": null,
+    "budget_currency": "USD",
+    "risk_tolerance": "relaxed",
+    "safety_margin_min": 15,
+    "notes": ""
+  },
+  "quality_check": {
+    "minimum_verdict": "GO",
+    "refinement_rounds": 0,
+    "issues_found": [],
+    "remaining_issues": [],
+    "stage_seconds": {
+      "time_check": 15.0,
+      "plan": 76.3
+    }
+  }
+}
