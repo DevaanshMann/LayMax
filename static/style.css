@@ -257,7 +257,8 @@ svg { width: 1em; height: 1em; }
 /* Fixed size, anchored beside the hero text: scaling it with the window cropped LAND/DEPART on wide monitors */
 .flight { left: min(calc(50% - 20px), calc(100% - 680px)); width: 660px; height: 210px; bottom: 120px; z-index: 1; }
 @media (max-width: 1100px) { .flight { display: none; } }
-.skyline { bottom: -1px; height: 200px; z-index: 1; }
+/* Three side-by-side copies at a fixed size: stretching one copy made buildings taller on wide monitors, into the flight path */
+.skyline { bottom: -1px; left: calc(50% - 2160px); width: 4320px; height: 200px; z-index: 1; }
 .skyline-back { fill: var(--skyline-back); opacity: .7; transform: translateY(-14px); }
 .skyline-front { fill: var(--bg); }
 .flight-path { fill: none; stroke: var(--flight-stroke); stroke-width: 2; stroke-dasharray: 2 9; stroke-linecap: round; animation: dash 30s linear infinite; }
