@@ -254,9 +254,9 @@ svg { width: 1em; height: 1em; }
 .sky.compact .skyline { height: 130px; }
 
 .flight, .skyline { position: absolute; left: 0; width: 100%; pointer-events: none; }
-.flight { bottom: 60px; height: 260px; z-index: 1; }
-@media (max-width: 900px) { .flight { opacity: .45; } }
-@media (max-width: 680px) { .flight { display: none; } }
+/* Fixed size, anchored beside the hero text: scaling it with the window cropped LAND/DEPART on wide monitors */
+.flight { left: min(calc(50% - 20px), calc(100% - 680px)); width: 660px; height: 210px; bottom: 120px; z-index: 1; }
+@media (max-width: 1100px) { .flight { display: none; } }
 .skyline { bottom: -1px; height: 200px; z-index: 1; }
 .skyline-back { fill: var(--skyline-back); opacity: .7; transform: translateY(-14px); }
 .skyline-front { fill: var(--bg); }
@@ -308,6 +308,9 @@ input::placeholder, textarea::placeholder { color: color-mix(in srgb, var(--mute
 input:hover, select:hover, textarea:hover { border-color: color-mix(in srgb, var(--text) 30%, var(--border-strong)); }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent); }
 input[type=number]::-webkit-inner-spin-button { opacity: .4; }
+/* iOS Safari gives date pickers an intrinsic min width that overflows narrow screens */
+input[type=datetime-local] { -webkit-appearance: none; appearance: none; min-width: 0; display: block; }
+input[type=datetime-local]::-webkit-date-and-time-value { text-align: left; }
 
 .select { position: relative; }
 .select select { appearance: none; -webkit-appearance: none; padding-right: 2.6rem; cursor: pointer; }
@@ -568,7 +571,7 @@ details[open] summary { margin-bottom: .8rem; }
   .nav { grid-template-columns: 40px 1fr auto; }
   .brand { justify-self: center; }
   .mock-badge { display: none; }
-  .g2, .g3, .choice-cards.c2, .choice-cards.c3 { grid-template-columns: 1fr; }
+  .g2, .g3, .choice-cards.c2, .choice-cards.c3 { grid-template-columns: minmax(0, 1fr); }
   .board-head, .board-row { grid-template-columns: 112px minmax(0, 1fr); }
   .board-head span:last-child { display: none; }
   .board-row .status { grid-column: 2; justify-self: start; }

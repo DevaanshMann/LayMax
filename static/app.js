@@ -522,11 +522,4 @@
   // ---------- toolbar ----------
   $("#back-btn").addEventListener("click", () => show("input"));
   $("#print-btn").addEventListener("click", () => window.print());
-  $("#json-btn").addEventListener("click", () => {
-    if (!lastResult) return;
-    const blob = new Blob([JSON.stringify(lastResult, null, 2)], { type: "application/json" });
-    const a = el("a", { href: URL.createObjectURL(blob), download: "laymax-plan.json" });
-    a.click();
-    URL.revokeObjectURL(a.href);
-  });
 })();
