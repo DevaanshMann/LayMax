@@ -76,6 +76,10 @@ Open **http://127.0.0.1:5050**. (Port 5000 is taken by AirPlay Receiver on macOS
 
 **Demo mode (no API key, no cost):** `LAYMAX_MOCK=1 python app.py`. A bar above the form replays real Claude results saved in `demo_samples/` (Singapore, Zurich CAUTION, Tokyo overnight, Amsterdam and Singapore with budget caps, London and Istanbul NO GO, JFK visa NO GO) plus the Doha example. `?autoplay=<sample name>` (for example `?autoplay=jfk-visa-nogo`) jumps straight to one. Set `LAYMAX_MOCK_DELAY` (seconds, default 2) to control the fake loading time. This is a good backup for the live demo.
 
+## Deploy (Render)
+
+`render.yaml` describes the service. On render.com choose **New → Blueprint**, pick this repo, and paste your `ANTHROPIC_API_KEY` when asked. Render runs the app with `gunicorn` and a 240s timeout, because a plan makes two Claude calls. Add `LAYMAX_MOCK=1` as an environment variable to host the free demo mode instead.
+
 ## Testing the prompt
 
 ```bash

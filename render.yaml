@@ -1,0 +1,17 @@
+# Render Blueprint: render.com -> New -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: laymax
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # A plan makes two Claude calls (~35-65s, longer with a refinement round),
+    # so raise gunicorn's 30s default timeout. Threads keep one slow plan from
+    # blocking other visitors.
+    startCommand: gunicorn app:app --workers 1 --threads 8 --timeout 240
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.3
+      - key: ANTHROPIC_API_KEY
+        sync: false   # Render asks for the value during setup; never committed
