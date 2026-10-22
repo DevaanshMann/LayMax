@@ -1,0 +1,15 @@
+Layover Maximizer Initial Prompt:
+
+I have a layover at [AIRPORT] in [CITY].
+
+I land at [ARRIVAL TIME] at [ARRIVAL TERMINAL], and my next flight departs at [DEPARTURE TIME] from [DEPARTURE TERMINAL].
+
+Passport: [COUNTRY]. Checked bags: [YES / NO].
+
+Budget: [AMOUNT]. Interests: [INTERESTS].
+
+Calculate my usable free time by subtracting: deplaning, immigration and customs, travel to and from the city, security re-entry, and arriving at the gate [BUFFER] minutes before boarding.
+Give a one word verdict: LEAVE, STAY, or RISKY, with a one line reason.
+If LEAVE: build a timed itinerary with transport options, costs, and a bolded "Head back by" time.
+If STAY or RISKY: suggest the best things to do inside the airport.
+List anything I must verify before deciding (visa rules, transit schedules, terminal changes).
