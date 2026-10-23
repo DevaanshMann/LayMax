@@ -1,6 +1,6 @@
 # ✈ LayMax: Layover Maximizer
 
-**CS4680 Prompt Engineering · AI Assistant Project**
+**Try it live: [laymax.onrender.com](https://laymax.onrender.com)** (free hosting, so the first visit can take up to a minute to wake the server)
 
 Long layovers are either hours wasted at the gate or a gamble that you'll make it back in time. Most travelers don't know how much of a 9-hour layover is really theirs once immigration, transit, and security are subtracted.
 
